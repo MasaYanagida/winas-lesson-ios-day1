@@ -15,6 +15,7 @@ func randomValue<T>(_ array: [T]) -> T {
 class Content {
     var name: String = ""
     var address: String = ""
+    var iconName: String = randomValue(["userIcon1","userIcon2","userIcon3","userIcon4"])
     
     static func create() -> Content {
         // https://yamagata.int21h.jp/tool/testdata/

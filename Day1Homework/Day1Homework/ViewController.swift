@@ -13,6 +13,7 @@ class ViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.register(UINib(nibName: "ContentTableViewCell", bundle: nil), forCellReuseIdentifier: "ContentTableViewCell")
         }
     }
     var contents = [Content]()
@@ -60,10 +61,9 @@ extension ViewController: UITableViewDataSource {
         return contents.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let content = contents[indexPath.row]
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = "\(content.name)\n\(content.address)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContentTableViewCell", for: indexPath) as! ContentTableViewCell
+        cell.selectionStyle = .gray
+        cell.content = contents[indexPath.row]
         return cell
     }
 }
@@ -74,9 +74,11 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        // do nothing
+        let content = contents[indexPath.row]
+        let controller = UIAlertController.init(title: "選択したセル", message: "選択した名前は\(content.name)です", preferredStyle: .alert)
+        controller.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
+        present(controller, animated: true, completion: nil)
     }
 }
