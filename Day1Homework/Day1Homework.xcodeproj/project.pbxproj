@@ -14,6 +14,7 @@
 		3305A3AB255E947B007BE9DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3305A3A9255E947B007BE9DA /* LaunchScreen.storyboard */; };
 		3305A3B6255E94F9007BE9DA /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3305A3B5255E94F9007BE9DA /* Content.swift */; };
 		3305A3BA255E9753007BE9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3305A3B9255E9753007BE9DA /* SceneDelegate.swift */; };
+		EB6D845B256D6F0300E6D2CA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D845A256D6F0300E6D2CA /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3305A3AC255E947B007BE9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3305A3B5255E94F9007BE9DA /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		3305A3B9255E9753007BE9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EB6D845A256D6F0300E6D2CA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				3305A39E255E9479007BE9DA /* AppDelegate.swift */,
 				3305A3B9255E9753007BE9DA /* SceneDelegate.swift */,
 				3305A3A2255E9479007BE9DA /* ViewController.swift */,
+				EB6D845A256D6F0300E6D2CA /* TableViewCell.swift */,
 				3305A3A4255E9479007BE9DA /* Main.storyboard */,
 				3305A3A7255E947B007BE9DA /* Assets.xcassets */,
 				3305A3A9255E947B007BE9DA /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB6D845B256D6F0300E6D2CA /* TableViewCell.swift in Sources */,
 				3305A3A3255E9479007BE9DA /* ViewController.swift in Sources */,
 				3305A39F255E9479007BE9DA /* AppDelegate.swift in Sources */,
 				3305A3B6255E94F9007BE9DA /* Content.swift in Sources */,
@@ -299,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Day1Homework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -317,6 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Day1Homework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
