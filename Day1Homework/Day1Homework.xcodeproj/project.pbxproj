@@ -14,6 +14,9 @@
 		3305A3AB255E947B007BE9DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3305A3A9255E947B007BE9DA /* LaunchScreen.storyboard */; };
 		3305A3B6255E94F9007BE9DA /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3305A3B5255E94F9007BE9DA /* Content.swift */; };
 		3305A3BA255E9753007BE9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3305A3B9255E9753007BE9DA /* SceneDelegate.swift */; };
+		33C98FAC255FA9560084B99A /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C98FAB255FA9560084B99A /* ContentTableViewCell.swift */; };
+		33C98FB0255FAB550084B99A /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C98FAF255FAB550084B99A /* ContentTableViewCell.xib */; };
+		33C98FB3255FAC510084B99A /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C98FB2255FAC510084B99A /* UIView+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		3305A3AC255E947B007BE9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3305A3B5255E94F9007BE9DA /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		3305A3B9255E9753007BE9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		33C98FAB255FA9560084B99A /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		33C98FAF255FAB550084B99A /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		33C98FB2255FAC510084B99A /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		33C98FB7255FAE200084B99A /* BonMot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BonMot.framework; path = Carthage/Build/iOS/BonMot.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +51,7 @@
 			children = (
 				3305A39D255E9479007BE9DA /* Day1Homework */,
 				3305A39C255E9479007BE9DA /* Products */,
+				33C98FB6255FAE200084B99A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +66,12 @@
 		3305A39D255E9479007BE9DA /* Day1Homework */ = {
 			isa = PBXGroup;
 			children = (
+				33C98FAA255FA8FA0084B99A /* Components */,
 				3305A3B4255E94EC007BE9DA /* Models */,
 				3305A39E255E9479007BE9DA /* AppDelegate.swift */,
 				3305A3B9255E9753007BE9DA /* SceneDelegate.swift */,
 				3305A3A2255E9479007BE9DA /* ViewController.swift */,
+				33C98FB2255FAC510084B99A /* UIView+Util.swift */,
 				3305A3A4255E9479007BE9DA /* Main.storyboard */,
 				3305A3A7255E947B007BE9DA /* Assets.xcassets */,
 				3305A3A9255E947B007BE9DA /* LaunchScreen.storyboard */,
@@ -76,6 +86,23 @@
 				3305A3B5255E94F9007BE9DA /* Content.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		33C98FAA255FA8FA0084B99A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				33C98FAB255FA9560084B99A /* ContentTableViewCell.swift */,
+				33C98FAF255FAB550084B99A /* ContentTableViewCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		33C98FB6255FAE200084B99A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33C98FB7255FAE200084B99A /* BonMot.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 				3305A3AB255E947B007BE9DA /* LaunchScreen.storyboard in Resources */,
 				3305A3A8255E947B007BE9DA /* Assets.xcassets in Resources */,
 				3305A3A6255E9479007BE9DA /* Main.storyboard in Resources */,
+				33C98FB0255FAB550084B99A /* ContentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +180,8 @@
 				3305A39F255E9479007BE9DA /* AppDelegate.swift in Sources */,
 				3305A3B6255E94F9007BE9DA /* Content.swift in Sources */,
 				3305A3BA255E9753007BE9DA /* SceneDelegate.swift in Sources */,
+				33C98FB3255FAC510084B99A /* UIView+Util.swift in Sources */,
+				33C98FAC255FA9560084B99A /* ContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +329,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4AZ3KGNWA6;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Day1Homework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -317,6 +353,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53FR9D98D3;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Day1Homework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
