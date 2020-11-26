@@ -13,9 +13,9 @@ class TableViewCell: UITableViewCell {
     
     var contents: Content? {
         didSet {
-            if let name = contents?.name, let address = contents?.address {
-                setInfo(name: name, address: address)
-            }
+            guard let contents = contents else { return }
+            textLabel?.text = contents.name
+            detailTextLabel?.text = contents.address
         }
     }
     
@@ -26,9 +26,5 @@ class TableViewCell: UITableViewCell {
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
     }
-    
-    private func setInfo(name: String, address: String) {
-        textLabel?.text = name
-        detailTextLabel?.text = address
-    }
+
 }
