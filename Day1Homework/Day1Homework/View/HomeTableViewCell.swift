@@ -9,12 +9,16 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var addressLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var content: Content? {
+        didSet {
+            guard let content = self.content else {
+                return
+            }
+            nameLabel.text = content.name
+            addressLabel.text = content.address
+        }
     }
-    
 }

@@ -11,7 +11,11 @@ class ViewController: UIViewController {
     
     @IBOutlet fileprivate dynamic weak var tableView: UITableView! {
         didSet {
-            NotificationCenter.default.addObserver(self, selector: #selector(self.refreshUI), name: UIApplication.willEnterForegroundNotification, object: nil)
+            let nib = UINib(nibName: "HomeTableViewCell", bundle: Bundle.main)
+            tableView.register(nib, forCellReuseIdentifier: "HomeTableViewCell")
+            
+            tableView.delegate = self
+            tableView.dataSource = self
         }
     }
     
@@ -21,11 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let nib = UINib(nibName: "HomeTableViewCell", bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: "HomeTableViewCell")
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshUI), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     deinit {
@@ -33,22 +33,18 @@ class ViewController: UIViewController {
     }
     
     @objc func refreshUI() {
-        contents = getContentData()
+        getContentData()
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
     }
     
-    func getContentData() -> [Content] {
-        
-        var contentList: [Content] = []
-        
+    func getContentData() {
+        contents.removeAll()
         for _ in 0...10 {
             let content = Content.create()
-            contentList.append(content)
+            self.contents.append(content)
         }
-        
-        return contentList
     }
 }
 
@@ -62,15 +58,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
-                
+        
         let content = contents[indexPath.row]
-        cell.nameLabel.text = content.name
-        cell.addressLabel.text = content.address
+        cell.content = content
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
